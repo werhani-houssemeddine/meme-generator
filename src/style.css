@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.nav-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  color: white;
+  padding: 20px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo span{
+  font-size: 1.25rem;
+  margin-right: auto;
+}
+
+.nav-header h2{
+  font-size: 1.75rem;
+  font-weight: bolder;
+}
