@@ -1,4 +1,4 @@
-import TrollFace from "./TrollFace";
+import TrollFace from './TrollFace';
 
 function Header() {
   return (
