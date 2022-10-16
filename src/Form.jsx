@@ -8,24 +8,17 @@ function Form() {
     randomImage: 'http://i.imgflip.com/1bij.jpg',
   });
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-
-    //for make sure that the button works fine
-    //console.log('Clicked');
-
-    function getMemeImage() {
-      const memesArray = memeData.data.memes;
-      const randomNumber = Math.floor(Math.random() * memesArray.length);
-      const { url } = memesArray[randomNumber];
-    }
-
-    getMemeImage();
-  };
+  function getMemeImage(event) {
+    event.preventDefault();
+    const memesArray = memeData.data.memes;
+    const randomNumber = Math.floor(Math.random() * memesArray.length);
+    const { url } = memesArray[randomNumber];
+    setMeme((prevData) => ({ ...prevData, randomImage: url }));
+  }
 
   function handleChange(event) {
-    const {name, value} = event.target;
-    
+    const { name, value } = event.target;
+
     setMeme((prev) => ({ ...prev, [name]: value }));
   }
 
@@ -48,7 +41,9 @@ function Form() {
           value={meme.bottomText}
           onChange={handleChange}
         />
-        <button className="form-button">Get a new meme image 🖼</button>
+        <button className="form-button" onClick={getMemeImage}>
+          Get a new meme image 🖼
+        </button>
       </form>
       <div className="meme">
         <img src={meme.randomImage} className="meme--image" />
