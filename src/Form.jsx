@@ -24,7 +24,7 @@ function Form() {
 
   return (
     <main>
-      <form className="meme-form" onSubmit={submitHandler}>
+      <form className="meme-form">
         <input
           type="text"
           name="topText"
